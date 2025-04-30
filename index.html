@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MIKAMI: Yua's Digital Revolution 💖</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font - Sawarabi Gothic for Japanese feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.mikamiyua.io/_next/image?url=%2Fyua%2F2.JPG&w=640&q=75" type="image/jpeg">
+    <script type="module">
+        // Function to show notification messages
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            if (!notification) {
+                console.error('Notification element not found!');
+                return;
+            }
+
+            notification.textContent = message;
+            notification.className = 'notification'; // Reset classes
+            notification.classList.add(type);
+            notification.classList.add('show');
+
+            // Hide the notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                // Optional: Remove type class after animation finishes if needed
+                // setTimeout(() => {
+                //     notification.className = 'notification';
+                // }, 300); // Match CSS transition duration
+            }, 3000);
+        }
+
+        window.copyAddress = function() {
+            const addressInput = document.getElementById('depositAddress');
+            const successMessage = document.getElementById('copySuccessMessage');
+
+            navigator.clipboard.writeText(addressInput.value)
+                .then(() => {
+                    if (successMessage) {
+                        successMessage.textContent = 'Copied!';
+                        successMessage.classList.add('visible');
+
+                        setTimeout(() => {
+                            successMessage.classList.remove('visible');
+                        }, 3000);
+                    }
+                    // Optionally use the showNotification function for consistency or if successMessage element isn't suitable
+                    // showNotification('Address copied!', 'success'); 
+                })
+                .catch(err => {
+                    // Use the showNotification function for errors
+                    showNotification('Failed to copy address.', 'error');
+                    console.error('Failed to copy: ', err);
+                });
+        }
+    </script>
+
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com;
+                   font-src https://fonts.gstatic.com;
+                   connect-src 'self';
+                   img-src 'self' data: https:;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+    <header>
+        <h1>$MIKAMI 💖</h1>
+        <p>Yua Mikami — the Queen of culture — now steps onto Solana.</p>
+    </header>
+
+    <main class="main-layout">
+        <!-- Left Side Photos -->
+        <section class="side-photos left-photos">
+            <h2>Gallery</h2>
+            <div class="photo-collection">
+                <img src="https://pbs.twimg.com/media/FsZPfugaEAAc6Wz?format=jpg&name=large" alt="Mikami Photo 1">
+                <img src="https://external-preview.redd.it/yua-mikami-v0-1MiEO_AnkYdUTQSgFbMzDua7U2I8j5T2s7Vr4nCxrrU.jpg?auto=webp&s=5dac397faa9c327b9cdd7ec89d1450e57d5acd32" alt="Mikami Photo 2">
+                <img src="https://preview.redd.it/5jsl6gigfk341.jpg?width=640&crop=smart&auto=webp&s=28d9547f899322e488bae63f1ec323a739472e92" alt="Mikami Photo 3">
+                <img src="https://preview.redd.it/yua-mikami-v0-m1s8446cuxd91.jpg?auto=webp&s=3a2db656ce4f76f82d92be01e1210fd99d5cdbee" alt="Mikami Photo 4">
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="presale">
+                <img src="https://www.mikamiyua.io/_next/image?url=%2Fyua%2F2.JPG&w=640&q=75" alt="Yua Mikami" class="intro-image">
+
+                <div class="project-intro">
+                    <p>Yua Mikami is a dazzling Japanese entertainer, chart-topping singer, and social media sensation who evolved from her days in the popular idol group SKE48 to become a true multimedia star. As a vibrant member of Ebisu Muscats and Honey Popcorn, and with appearances in hit games like Yakuza 6, she's constantly expanding her creative universe. A digital pioneer at heart, Mikami has become a familiar face at major crypto exchange events across Asia, actively exploring how blockchain can enhance fan connections. With millions of devoted followers and an infectious enthusiasm for emerging technologies, her fan token project represents the perfect fusion of entertainment and innovation—giving her community exciting new ways to connect with the star they love!</p>
+                </div>
+
+                <div class="new-intro-text">
+                     <p>The moment we've all been waiting for.<br><strong>$Mikami</strong> is coming.</p>
+                </div>
+
+                <div class="sol-progress">
+                    <h3>Progress</h3>
+                    <p class="sol-amount">15,604.38 SOL</p>
+                </div>
+
+                <div class="deposit-info">
+                    <h3>Presale Deposit Address</h3>
+                    <p class="exchange-disclaimer">(Don’t send directly from exchange)</p>
+                    <div class="wallet-address">
+                        <input type="text" value="miKhonsoqnZzNuinEqinF7ENvTy91iqBGEni5WW7P8e" id="depositAddress" readonly>
+                        <button onclick="copyAddress()">Copy Address</button>
+                        <span id="copySuccessMessage"></span>
+                    </div>
+                    <p class="deposit-instructions">
+                        Send SOL directly to participate in the $MIKAMI presale.<br>
+                        Minimum contribution: 0.1 SOL
+                    </p>
+                </div>
+
+                <div class="buy-buttons">
+                    <a href="https://buy.moonpay.com/v2/buy?theme=light&colorCode=%f1d8d6&language=en&theme=light&defaultCurrencyCode=sol&currencyCode=sol&baseCurrencyCode=USD" target="_blank" rel="noopener noreferrer">Buy SOL Via MoonPay</a>
+                    <a href="https://widget.changelly.com/" target="_blank" rel="noopener noreferrer">Buy SOL Via Changelly</a>
+                </div>
+
+                <section class="tokenomics">
+                    <h3>Token Economics</h3>
+                    <img src="https://www.mikamiyua.io/_next/image?url=%2Ftokenomics.png&w=640&q=75" alt="Tokenomics Chart" class="tokenomics-image">
+                    <div class="token-allocation">
+                        <div class="allocation-item">
+                            <span>FIRESALE DEBUT</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span>LIQUIDITY</span>
+                            <span>15%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span>COMMUNITY</span>
+                            <span>10%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span>MARKETING</span>
+                            <span>5%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span>MIKAMI YUE</span>
+                            <span>50% [lock until 2069]</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="roadmap">
+                    <h3>Journey Roadmap</h3>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item">
+                            <span class="roadmap-stage">Phase 1</span>
+                            <p>Birth of a Legend: Launch of the $MIKAMI token, Initial community building (Telegram, X, Memes), Launch Liquidity Pool at DEX</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <span class="roadmap-stage">Phase 2</span>
+                            <p>Awakening: Launch official Mikami's Shrine, Mikami fans interaction and swag drop, Meme contests and marketing pushes</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <span class="roadmap-stage">Phase 3</span>
+                            <p>Expansion: First real world merchandise collab tease (signed posters, collectibles), Massive partnerships campaign across Asia & anime community, $Mikami burn event (celebrating milestones)</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <span class="roadmap-stage">Phase 4</span>
+                            <p>Immortality: Launch Mikami DAO - $Mikami holders vote on future events and collabs, Model Context Protocol (MCP) AI agent creation, Global fans gatherings or online concerts, AI agent interaction and monetization - holders exclusive</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="token-details">
+                    <h3>$MIKAMI Token Details</h3>
+                    <ul>
+                        <li>Token Symbol: <strong>$MIKAMI</strong></li>
+                        <li>Blockchain: <strong>Solana</strong></li>
+                        <li>Minimum Investment: <strong>0.1 SOL</strong></li>
+                    </ul>
+                    <p class="token-details-note">
+                        There is no fixed price per token. The price will be determined by the amount of funds raised during the Firesale Debut divided by the available token supply. You will receive $Mikami tokens.<br>
+                        The official Contract Address will be announced after the Firesale Debut concludes.
+                    </p>
+                </div>
+
+                <div class="social-links">
+                    <h3>Join the Community</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/yua_mikami" target="_blank">
+                            <img src="https://www.mikamiyua.io/_next/image?url=%2Fsocials%2Fx.png&amp;w=32&amp;q=75" alt="Twitter Logo">Twitter (8.2M)
+                        </a>
+                        <a href="https://www.instagram.com/yua_mikami" target="_blank">
+                            <img src="https://www.mikamiyua.io/_next/image?url=%2Fsocials%2Finstagram.png&amp;w=32&amp;q=75" alt="Instagram Logo">Instagram (3.7M)
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC0BCfHbNORhd7dsw1R5rw9w" target="_blank">
+                            <img src="https://www.mikamiyua.io/_next/image?url=%2Fsocials%2Fyoutube.png&amp;w=32&amp;q=75" alt="YouTube Logo">YouTube (1.2M)
+                        </a>
+                        <a href="https://www.tiktok.com/@yua_mikami" target="_blank">
+                            <img src="https://www.mikamiyua.io/_next/image?url=%2Fsocials%2Ftiktok.png&amp;w=32&amp;q=75" alt="TikTok Logo">TikTok (4.5M)
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Side Photos -->
+        <section class="side-photos right-photos">
+             <h2>Gallery</h2>
+             <div class="photo-collection">
+                <img src="https://image.cmoney.tw/attachment/post/1690646400/f762dcd3-71d7-4b6f-b80b-938ba08f7492.jpg" alt="Mikami Photo 5">
+                <img src="https://pbs.twimg.com/media/FhJ7KZDaUAA6LXJ.jpg" alt="Mikami Photo 6">
+                <img src="https://th.bing.com/th/id/OIP.EPPwG0lKM2OsRy6i10-3vgHaJ4?w=1128&h=1504&rs=1&pid=ImgDetMain" alt="Mikami Photo 7">
+                <img src="https://jdailyhk.com/wp-content/uploads/2019/04/%E4%B8%89%E4%B8%8A%E5%AF%AB%E7%9C%9F13.jpg" alt="Mikami Photo 8">
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 mikamiyua.io All rights reserved.</p>
+        <p>$Mikami are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$MIKAMI" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type.</p>
+        <p>"MIKAMI" is a registered trademark of Mikami Yua Fans Operations Ltd. This product is created in collaboration with Yua Mikami and her official management company. Mikami Digital Collectibles LLC uses the "MIKAMI" name and the name, image and likeness of Yua Mikami pursuant to the terms of an official partnership agreement with Yua Mikami and her management team.</p>
+        <p>Disclaimer: This coin and project are not intended to market to or make sales to the Japanese market or Japanese users. We explicitly reject any sales to Japanese users and market participants.</p>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+</body>
+</html>
